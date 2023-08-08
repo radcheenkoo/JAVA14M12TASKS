@@ -1,9 +1,13 @@
-import example2.CheckNumberProcessor;
+import example2.NumberProcessorTest;
+import example2WithExecutorService.NumberFilter;
+
+import java.util.Enumeration;
 
 public class Main {
     public static void main(String[] args) {
         //example1Test();
-        example2Test();
+        //example2Test();
+        example2TestWithExecutorService();
     }
 
     public static void example1Test(){
@@ -11,7 +15,12 @@ public class Main {
         example1.countTheTime();
     }
     public static void example2Test(){
-        CheckNumberProcessor checkNumberProcessor = new CheckNumberProcessor();
-        checkNumberProcessor.filterNumber();
+        NumberProcessorTest numberProcessorTest = new NumberProcessorTest();
+        numberProcessorTest.filterNum();
+    }
+    public static void example2TestWithExecutorService(){
+        NumberFilter numberFilter = new NumberFilter(100);
+        numberFilter.filterNumber();
+        numberFilter.closeMethod();
     }
 }
